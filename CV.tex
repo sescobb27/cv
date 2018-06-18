@@ -1,200 +1,199 @@
 \documentclass[a4paper]{article}
-\usepackage{fullpage}
-\usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
-\usepackage{amsmath} \usepackage{amssymb} \usepackage{url} \textheight=10in
-\pagestyle{empty}
-\raggedright
-\title{Curriculum Vitae}
-\author{Sim\'on Escobar Benitez}
-\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
-% DEFINITIONS FOR RESUME
-\newcommand{\area}[2]{\vspace*{-9pt} \begin{verse}\textbf{#1} #2 \end{verse}
-}
-\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
-\newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt}
-\textsc{#1}} \vspace*{-6pt} \lineunder}
-\newcommand{\employer}[3]{{
-\textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\ }}
-\newcommand{\contact}[2]{
-\vspace*{-8pt}
-\begin{center}
-{\LARGE \scshape {#1}} \lineunder #2
-\end{center}
-\vspace*{-8pt} }
-\newenvironment{achievements}{\begin{list}{$\bullet$}{\topsep 0pt \itemsep
--2pt}}{\vspace*{4pt}\end{list}}
-\newcommand{\schoolwithcourses}[2]{
-\textbf{#1} #2
-\vspace*{5pt} }
-\newcommand{\school}[4]{ \textbf{#1} #2 $\bullet$ #3\\ #4
-\\ }
-\newcommand{\programming}[1]{{\textbf{#1}}}
-\newcommand{\emphasys}[1]{\textbf{\emph{#1}}}
-% END RESUME DEFINITIONS
-\begin{document}
-\small
-\smallskip
-\vspace*{-44pt}
-\contact{Sim\'on Escobar Benitez} { $\bullet$ sescobb27@gmail.com $\bullet$ Github: \url{https://github.com/sescobb27} }
-\header{Education}
-\schoolwithcourses{Universidad EAFIT (Medell\'in, Colombia)}{Software Engineer}
+  \usepackage{fullpage}
+  \usepackage[english]{babel}
+  \usepackage[utf8x]{inputenc}
+  \usepackage{amsmath} \usepackage{amssymb} \usepackage{url} \textheight=10in
+  \pagestyle{empty}
+  \raggedright
+  \title{Curriculum Vitae}
+  \author{Sim\'on Escobar Benitez}
+  \def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+  % DEFINITIONS FOR RESUME
+  \newcommand{\area}[2]{\vspace*{-9pt} \begin{verse}\textbf{#1} #2 \end{verse}
+  }
+  \newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+  \newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt}
+  \textsc{#1}} \vspace*{-6pt} \lineunder}
+  \newcommand{\employer}[3]{{
+  \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\ }}
+  \newcommand{\contact}[2]{
+  \vspace*{-8pt}
+  \begin{center}
+  {\LARGE \scshape {#1}} \lineunder #2
+  \end{center}
+  \vspace*{-8pt} }
+  \newenvironment{achievements}{\begin{list}{$\bullet$}{\topsep 0pt \itemsep
+  -2pt}}{\vspace*{4pt}\end{list}}
+  \newcommand{\schoolwithcourses}[2]{
+  \textbf{#1} #2
+  \vspace*{5pt} }
+  \newcommand{\school}[4]{ \textbf{#1} #2 $\bullet$ #3\\ #4
+  \\ }
+  \newcommand{\programming}[1]{{\textbf{#1}}}
+  \newcommand{\emphasys}[1]{\textbf{\emph{#1}}}
+  % END RESUME DEFINITIONS
+  \begin{document}
+  \small
+  \smallskip
+  \vspace*{-44pt}
+  \contact{Sim\'on Escobar Benitez} { $\bullet$ sescobb27@gmail.com $\bullet$ Github: \url{https://github.com/sescobb27} }
+  \header{Education}
+  \schoolwithcourses{Universidad EAFIT (Medell\'in, Colombia)}{Software Engineer}
 
-\header{Work History - 7 years of exp}
+  \header{Work History - 7 years of exp}
 
-\employer{ Expedition (San Francisco/Remote)}{2017-2, 2018-2}{Software Engineer}
-\begin{achievements}
-\item Part of 3 people team for the back-end and front-end.
-\item Worked on implemeting the first version of Expedition with Elixir, Phoenix Postgresql in the back-end and EmberJS in the front-end.
-\item Design the RFC for a place scraper and aggregator system and developed it using  background jobs and GenStage for background processing, place aggregation and persistence into the DB.
-\item Designed the RFC for the payment system integration with Stripe managing subscriptions and developed it using finite state machines for managing indempotency and state management.
-\item Developed a simple search system using postgresql fuzzy searching and full text searching.
-\end{achievements}
+  \employer{ Expedition (San Francisco/Remote)}{2017-2, 2018-2}{Software Engineer}
+  \begin{achievements}
+  \item \emphasys{Expedition} is a service for connecting pockets of people and digging down deep into emerging markets in cities that are rising up, recognizing the people pushing things forward, telling their stories and connecting those stories to actionable things.
+  \item Part of 3 people team for the back-end and front-end.
+  \item Worked on implemeting the first version of Expedition with Elixir, Phoenix Postgresql in the back-end and EmberJS in the front-end.
+  \item Designed the RFC for a place scraper and aggregator system and developed it using  background jobs with GenStage for background processing, place aggregation and persistence into the DB.
+  \item Designed the RFC for the payment system integration with Stripe managing subscriptions and developed it using finite state machines for managing indempotency and state management.
+  \item Developed a simple search system for finding places by current location or by name using postgresql fuzzy searching, full text searching and harversine formula for coordinates comparison.
+  \end{achievements}
 
-\employer{ Elizabeth \& Clarke (New York/Remote)}{2015-2, 2017-2}{Software Engineer}
-\begin{achievements}
-\item \emphasys{Elizabeth \& Clarke} is an on-line subscription based fashion store
-\item Part of 2 people team for the back-end and front-end.
-\item Worked on implementing the second version of Elizabeth \& Clarke with NodeJS and MongoDB in the back-end and EmberJS in the front-end and stripe as out payment gateway.
-\item Designed and developed the architecture of the second version of Elizabeth \& Clarke.
-\item Designed and developed the behavioral state machine that controls all our operations including order state management, subscription and billing management and customer management.
-\item Designed and developed (Dollarico) an internal automation tool to automate the process of delivering new seasons through time, so we can run a year in 1 day including product releases, payments, reports and more.
-\end{achievements}
+  \employer{ Elizabeth \& Clarke (New York/Remote)}{2015-2, 2017-2}{Software Engineer}
+  \begin{achievements}
+  \item \emphasys{Elizabeth \& Clarke} is an on-line subscription based fashion store
+  \item Part of 2 people team for the back-end and front-end.
+  \item Worked on implementing the second version of Elizabeth \& Clarke with NodeJS and MongoDB in the back-end and EmberJS in the front-end and stripe as out payment gateway.
+  \item Designed and developed the architecture of the second version of Elizabeth \& Clarke.
+  \item Designed and developed the behavioral state machine that controls all our operations including order state management, subscription and billing management and customer management.
+  \item Designed and developed (Dollarico) an internal automation tool to automate the process of delivering new seasons through time, so we can run a year in 1 day including product releases, payments, reports and more.
+  \end{achievements}
 
-\employer{Make it Real (Medell\'in)}{2017-1, 2017-1}{Teacher}
-\begin{achievements}
-\item \emphasys{Make it Real} is a Full-Stack bootcamp
-\item Taught about Ruby, OOP with Ruby, Sinatra, Rails, Databases, SQL and JavaScript
-\end{achievements}
+  \employer{Make it Real (Medell\'in)}{2017-1, 2017-1}{Teacher}
+  \begin{achievements}
+  \item \emphasys{Make it Real} is a Full-Stack bootcamp
+  \item Taught about Ruby, OOP with Ruby, Sinatra, Rails, Databases, SQL and JavaScript
+  \end{achievements}
 
-\employer{ Talos Digital (Medell\'in Colombia)}{2014-2, 2015-1}{Software Engineer}
-\begin{achievements}
-\item \emphasys{Convenience Select}: The project was about Team management and Loan service for kid's sport teams. The teams were able to outsource all the payment and e-commerce services through the application.
-\item Full-stack Developer using MEAN framework  (MongoDB, ExpressJS, AngularJS and NodeJS).
-\item Developed all client side logic and interactions using AngularJS.
-\item Developed a Loan service and Payment Gateway Adapter.
-\item Developed a cron based services for charging users.
-\item \emphasys{Scanther}: The project was about building mobile web sites and native applications dynamically and easily for non-dev customers.
-\item Full-stack Developer using Firebase, AngularJS and NodeJs
-\item Developed all business logic in AngularJS using Firebase as a web service which is a realtime nosql database.
-\item Developed a NodeJS proxy for all our integration with our Payment Gateway including webhooks. Also this proxy serves all our integration with Urban Airship for all our notifications to mobile devices.
-\item Built the production environment in AWS EC2.
-\end{achievements}
+  \employer{ Talos Digital (Medell\'in Colombia)}{2014-2, 2015-1}{Software Engineer}
+  \begin{achievements}
+  \item \emphasys{Convenience Select}: The project was about Team management and Loan service for kid's sport teams. The teams were able to outsource all the payment and e-commerce services through the application.
+  \item Full-stack Developer using MEAN framework  (MongoDB, ExpressJS, AngularJS and NodeJS).
+  \item Developed all client side logic and interactions using AngularJS.
+  \item Developed a Loan service and Payment Gateway Adapter.
+  \item Developed a cron based services for charging users.
+  \item \emphasys{Scanther}: The project was about building mobile web sites and native applications dynamically and easily for non-dev customers.
+  \item Full-stack Developer using Firebase, AngularJS and NodeJs
+  \item Developed all business logic in AngularJS using Firebase as a web service which is a realtime nosql database.
+  \item Developed a NodeJS proxy for all our integration with our Payment Gateway including webhooks. Also this proxy serves all our integration with Urban Airship for all our notifications to mobile devices.
+  \item Built the production environment in AWS EC2.
+  \end{achievements}
 
-\employer{ Universidad EAFIT (Medell\'in Colombia) High Performance Computing Research Center APOLO}{2014-1, 2014-2}{Research assistant}
-\begin{achievements}
-\item Research Assistant in High performance computing based on Open Source technologies
-\item Operative System: we work on "Rocks Cluster" based on CentOS 6.1
-\item As a System Administrator I was in charge of job submission queues using torque and maui as a scheduler, compilation and installation of large and modular software.
-\item Built Sys-Admin tools with Ruby, Python and Bash Script.
-\end{achievements}
-
-\employer{ Universidad EAFIT (Medell\'in Colombia) }{2014-2}{Teacher Assistant}
-\begin{achievements}
-\item Integration Project 2
-\item Assist students on Web Application Development, Continuous Integration, Continuous Delivery and TDD.
-\end{achievements}
-
-\employer{ Universidad EAFIT (Medell\'in Colombia) }{2013-2, 2014-2}{Teacher Assistant}
-\begin{achievements}
-\item Integration Project 1
-\item Assist students on Android Application Development, Web Services and 3rd party integrations.
-\end{achievements}
+  \employer{ Universidad EAFIT (Medell\'in Colombia) High Performance Computing Research Center APOLO}{2014-1, 2014-2}{Research assistant}
+  \begin{achievements}
+  \item Research Assistant in High performance computing based on Open Source technologies
+  \item Operative System: we work on "Rocks Cluster" based on CentOS 6.1
+  \item As a System Administrator I was in charge of job submission queues using torque and maui as a scheduler, compilation and installation of large and modular software.
+  \item Built Sys-Admin tools with Ruby, Python and Bash Script.
+  \end{achievements}
 
 \newpage
 
-\employer{ SmartOut (Half Time - Remote)}{2013-1, 2014-1}{Software Engineer}
-\begin{achievements}
-\item Developed a \programming{Ruby on Rails - Postgresql - EmberJS} application for local Start-Up
-\item It was a coupon/discount recommender system who deliver coupons and discounts directly to user through Google Cloud Messaging and Apple Push Notification Service improving the Customer - User relationship.
-\end{achievements}
+  \employer{ Universidad EAFIT (Medell\'in Colombia) }{2014-2}{Teacher Assistant}
+  \begin{achievements}
+  \item Integration Project 2
+  \item Assist students on Web Application Development, Continuous Integration, Continuous Delivery and TDD.
+  \end{achievements}
 
-\employer{ Freelance (Remote)  Liliane Fonds Ong}{2013-2, 2014-1}{Software Engineer}
-\begin{achievements}
-\item Migrate a \programming{Ruby on Rails 2} application to \programming{Ruby on Rails 3}
-\item Developed new features and improve performance.
-\end{achievements}
+  \employer{ Universidad EAFIT (Medell\'in Colombia) }{2013-2, 2014-2}{Teacher Assistant}
+  \begin{achievements}
+  \item Integration Project 1
+  \item Assist students on Android Application Development, Web Services and 3rd party integrations.
+  \end{achievements}
 
-\employer{ Universidad EAFIT (Medell\'in Colombia) / ARTICA (Applied ICT Regional Alliance)} {2012-1, 2012-2} {Research assistant in IPTV}
-\begin{achievements}
-\item Java Android Software Developer
-\item Interactive Android TV controls based on Accelerometers, Gestures, Buttons, Voice, and Multimedia (the last one was developed by testing the best capabilities of the other ones based on their usability) \emphasys{Java Android}
-\end{achievements}
+  \employer{ SmartOut (Half Time - Remote)}{2013-1, 2014-1}{Software Engineer}
+  \begin{achievements}
+  \item Developed a \programming{Ruby on Rails - Postgresql - EmberJS} application for local Start-Up
+  \item It was a coupon/discount recommender system who deliver coupons and discounts directly to user through Google Cloud Messaging and Apple Push Notification Service improving the Customer - User relationship.
+  \end{achievements}
 
-% \employer{no-name}{2016-1, 2016-2}{Advisor}
-% \begin{achievements}
-% \item Advise them on microservice architectures and patterns.
-% \item Advise them on distributed systems principles, problems and how to face them (explain them some distributed systems algorithms like SAGAS, CRDTs, consensus algorithms like RAFT).
-% \item Advise them on how to split a monolith into a service oriented monolith and then how to scale it into a microservice architecture.
-% \end{achievements}
+  \employer{ Freelance (Remote)  Liliane Fonds Ong}{2013-2, 2014-1}{Software Engineer}
+  \begin{achievements}
+  \item Migrate a \programming{Ruby on Rails 2} application to \programming{Ruby on Rails 3}
+  \item Developed new features and improve performance.
+  \end{achievements}
 
-% \header{Courses and Certifications}
-% \emphasys{Github account with the below certifications \url{https://github.com/sescobb27/Certificados}}
-% \begin{achievements}
-% \item Foundational Computer Science Course - An Industry Perspective, conducted by Educational and Research Department Infosys Limited ( Mysore - India )
-% \programming{Java J2EE PLSQL JSF JPA}
-% \end{achievements}
-% \begin{achievements}
-% \item{CS-169.1x Software as a Service course in Ruby and Ruby on Rails, Agile Methodologies, Test Driven Development and Behavior Driven Development, conducted by Berkeley University at Edx}
-% \programming{Ruby - Ruby on Rails - Test Driven Development - Behavior Driven Development - Agile Methologies}
-% \end{achievements}
-% \begin{achievements}
-% \item{CS-169.2x Advanced Software as a Service course in Ruby and Ruby on Rails, Agile Methodologies, Test Driven Development and Behavior Driven Development, conducted by Berkeley University at Edx}
-% \programming{Ruby - Ruby on Rails - Test Driven Development - Behavior Driven Development - Agile Methologies}
-% \end{achievements}
+  \employer{ Universidad EAFIT (Medell\'in Colombia) / ARTICA (Applied ICT Regional Alliance)} {2012-1, 2012-2} {Research assistant in IPTV}
+  \begin{achievements}
+  \item Java Android Software Developer
+  \item Interactive Android TV controls based on Accelerometers, Gestures, Buttons, Voice, and Multimedia (the last one was developed by testing the best capabilities of the other ones based on their usability) \emphasys{Java Android}
+  \end{achievements}
 
-\header{Open Source}
-All projects and current work can be found at my GitHub profile: \url{https://github.com/sescobb27}
-\begin{achievements}
-\item{Forked and Maintain node's JSON:API serializer which is used in Elizabeth \& Clarke's back-end \url{https://github.com/sescobb27/node-jsonapi-serializer}}
-\item{Contributed to \url{https://github.com/DavyJonesLocker/postgres_ext}}
-\item{Contributed to \url{https://github.com/ffaker/ffaker}}
-\item{Contributed to \url{https://github.com/phalcon/cphalcon}}
-\item{Contributed to \url{https://github.com/vt-elixir/ja_serializer}}
-\item{Contributed to \url{https://github.com/swoosh/swoosh}}
-\item{more ...}
-\end{achievements}
+  % \employer{no-name}{2016-1, 2016-2}{Advisor}
+  % \begin{achievements}
+  % \item Advise them on microservice architectures and patterns.
+  % \item Advise them on distributed systems principles, problems and how to face them (explain them some distributed systems algorithms like SAGAS, CRDTs, consensus algorithms like RAFT).
+  % \item Advise them on how to split a monolith into a service oriented monolith and then how to scale it into a microservice architecture.
+  % \end{achievements}
 
-\header{Skills}
-\begin{achievements}
-\item {Proficient architecting systems via RFCs}
-\item {Proficient in Elixir, Ruby, Ruby on Rails, JavaScript, NodeJS, EmberJS, Test Driven Development.}
-\item {Familiar with Golang.}
-\item {Familiar with GNU/Linux.}
-\item {Familiar with GIT.}
-\item {Familiar with DDD.}
-\item {Familiar with Postgresql.}
-\end{achievements}
-\header{Languages}
-\begin{achievements}
-\item{Spanish - Native Language}
-\item{English - Proficient}
-\end{achievements}
+  % \header{Courses and Certifications}
+  % \emphasys{Github account with the below certifications \url{https://github.com/sescobb27/Certificados}}
+  % \begin{achievements}
+  % \item Foundational Computer Science Course - An Industry Perspective, conducted by Educational and Research Department Infosys Limited ( Mysore - India )
+  % \programming{Java J2EE PLSQL JSF JPA}
+  % \end{achievements}
+  % \begin{achievements}
+  % \item{CS-169.1x Software as a Service course in Ruby and Ruby on Rails, Agile Methodologies, Test Driven Development and Behavior Driven Development, conducted by Berkeley University at Edx}
+  % \programming{Ruby - Ruby on Rails - Test Driven Development - Behavior Driven Development - Agile Methologies}
+  % \end{achievements}
+  % \begin{achievements}
+  % \item{CS-169.2x Advanced Software as a Service course in Ruby and Ruby on Rails, Agile Methodologies, Test Driven Development and Behavior Driven Development, conducted by Berkeley University at Edx}
+  % \programming{Ruby - Ruby on Rails - Test Driven Development - Behavior Driven Development - Agile Methologies}
+  % \end{achievements}
 
-\header{Extras}
-\begin{achievements}
-\item{Ex-organizer of \emphasys{Golang Medell\'in} Meet-Up}
-\item{Organizer of \emphasys{RubyConf Colombia}}
-\item{Organizer of \emphasys{RailsGirls Medell\'in}}
-\item{RAFT Consensus algorithm talk \emphasys{Papers We Love Medell\'in} \url{https://github.com/papers-we-love/medellin/pull/4}}
-\item{Conquering the web with Go \emphasys{Golang Medell\'in Meet-Up} talk \url{https://github.com/sescobb27/go-web-apps}}
-\item{Asynchronous and Parallel behavior with Go \emphasys{Golang Medell\'in Meet-Up} talk \url{https://github.com/sescobb27/async-go}}
-\item{\emphasys{Ruby and Ruby on Rails free course} on Eafit University on how to get from basic to be a proficient Ruby developer; teaching Blocks Procs and Lambdas, inheritance, Object Oriented Design, Runtime evaluation, Modules, Test Driven Development (TDD), Dependency Injection and more. Introduction on how to setup a Ruby on Rails project, Perfect Flow, Rails layers and how to develop and understand each layer. 2013 - 2 \url{https://github.com/sescobb27/CursoRubyRoR}}
-\item{Article on how to build a TCP Chat using ruby. \url{http://www.sitepoint.com/ruby-tcp-chat/}}
-\end{achievements}
+  \header{Open Source}
+  All projects and current work can be found at my GitHub profile: \url{https://github.com/sescobb27}
+  \begin{achievements}
+  \item{Forked and Maintain node's JSON:API serializer which is used in Elizabeth \& Clarke's back-end \url{https://github.com/sescobb27/node-jsonapi-serializer}}
+  \item{Contributed to \url{https://github.com/DavyJonesLocker/postgres_ext}}
+  \item{Contributed to \url{https://github.com/ffaker/ffaker}}
+  \item{Contributed to \url{https://github.com/phalcon/cphalcon}}
+  \item{Contributed to \url{https://github.com/vt-elixir/ja_serializer}}
+  \item{Contributed to \url{https://github.com/swoosh/swoosh}}
+  \item{more ...}
+  \end{achievements}
 
-% \header{Entrepreneur}
-% \employer{ Hurry Up } {2015-1, 2015-2} {CTO - Developer}
-% \begin{achievements}
-% \item {\emphasys{In Development}}
-% \item {Developed the Front-end and Back-end service \emphasys{Ruby on Rails - MongoDB - Redis - AngularJS}}
-% \end{achievements}
+  \header{Skills}
+  \begin{achievements}
+  \item {Proficient architecting systems via RFCs}
+  \item {Proficient in Elixir, Ruby, Ruby on Rails, JavaScript, NodeJS, EmberJS, Test Driven Development.}
+  \item {Familiar with Golang.}
+  \item {Familiar with GNU/Linux.}
+  \item {Familiar with GIT.}
+  \item {Familiar with DDD.}
+  \item {Familiar with Postgresql.}
+  \end{achievements}
+  \header{Languages}
+  \begin{achievements}
+  \item{Spanish - Native Language}
+  \item{English - Proficient}
+  \end{achievements}
 
-\header{Personal references}
-\begin{achievements}
-\item{Juan Pablo Buritica \emphasys{CTO at Elizabeth \& Clarke} and \emphasys{VP of Engineering at Splice} Twitter @buritica}
-\end{achievements}
-\begin{achievements}
-\item{Sebastian Arcila Valenzuela \emphasys{Architecture Director at Barista Ventures} Twitter @sarcilav}
-\end{achievements}
-\end{document}
+  \header{Extras}
+  \begin{achievements}
+  \item{Ex-organizer of \emphasys{Golang Medell\'in} Meet-Up}
+  \item{Organizer of \emphasys{RubyConf Colombia}}
+  \item{Organizer of \emphasys{RailsGirls Medell\'in}}
+  \item{RAFT Consensus algorithm talk \emphasys{Papers We Love Medell\'in} \url{https://github.com/papers-we-love/medellin/pull/4}}
+  \item{Asynchronous and Parallel behavior with Go \emphasys{Golang Medell\'in Meet-Up} talk \url{https://github.com/sescobb27/async-go}}
+  \item{Article on how to build a TCP Chat using ruby. \url{http://www.sitepoint.com/ruby-tcp-chat/}}
+  \end{achievements}
+
+  % \header{Entrepreneur}
+  % \employer{ Hurry Up } {2015-1, 2015-2} {CTO - Developer}
+  % \begin{achievements}
+  % \item {\emphasys{In Development}}
+  % \item {Developed the Front-end and Back-end service \emphasys{Ruby on Rails - MongoDB - Redis - AngularJS}}
+  % \end{achievements}
+
+  \header{Personal references}
+  \begin{achievements}
+  \item{Juan Pablo Buritica \emphasys{CTO at Elizabeth \& Clarke} and \emphasys{VP of Engineering at Splice} Twitter @buritica}
+  \end{achievements}
+  \begin{achievements}
+  \item{Sebastian Arcila Valenzuela \emphasys{Architecture Director at Barista Ventures} Twitter @sarcilav}
+  \end{achievements}
+  \end{document}

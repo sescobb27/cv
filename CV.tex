@@ -40,14 +40,24 @@
   \header{Education}
   \schoolwithcourses{Universidad EAFIT (Medell\'in, Colombia)}{Software Engineer}
 
-  \header{Work History - 7 years of exp}
+  \header{Work History - 8 years of exp}
+
+  \employer{ Erlang Solutions (London/Americas Team - Remote)}{2018-2, Current}{Software Engineer}
+  \begin{achievements}
+  \item \emphasys{Erlang Solutions} is a software agency company focused on building fault-tolerant and resilient systems that can scale to billions of users using its Erlang \& Elixir expertise.
+  \item Part of 4 people team, 3 developers and one office manager, reporting to the office manager.
+  \item \emphasys{Elixir Consultancy} Worked with an educational game company to diagnose server crashes at peak hours, instructed in-house team how to resolve issues while implementing load contention on GenServers, properly use caching with ets tables, organize supervision architecture, reduce the number of queries to the database to a minimum by taking advantage of transactions and pre-loading associations, start using multiple distributed nodes with pg2 and distributing processes across those nodes, install monitoring tools to prevent and diagnose future problems.
+  \item \emphasys{Elixir Consultancy} Worked with a major car manufacturer to deliver the next version of their car rental and sharing platform by delivering features and increasing its code coverage by 25\%.
+  \item \emphasys{Elixir Consultancy} Worked with a network company delivering multiple services in an micro-service oriented architecture for routing and connecting big gaming companies’ servers throughout the world; among our responsibilities was to increase the test coverage of all of those micro-services, to increase confidence delivering more products and features, parse and import RADB in a streaming fashion into an ets table, and make it query-able, connect multiple services and APIs through GRPC, built a distributed PubSub architecture using Phoenix.PubSub for handling hundreds of thousands of subscribers across more than 30 nodes using proxy processes de decrease the network congestion, add support for their services to support read/write postgresql replicas, and built a GRPC proxy for admins to interact with GoBGP.
+  \item \emphasys{Elixir Consultancy} Currently working with a major video streaming service helping them to scale and implement their video processing platform which is composed of 5 clusters each cluster composed on multiple nodes in-charge of Media Parsing, Media Transcoding, Packaging, QA and Delivery final media streams to storage providers in order to stream those results in multiple media formats, qualities, resolutions and video streaming formats.
+  \end{achievements}
 
   \employer{ Expedition (San Francisco/Remote)}{2017-2, 2018-2}{Software Engineer}
   \begin{achievements}
   \item \emphasys{Expedition} is a service for connecting pockets of people and digging down deep into emerging markets in cities that are rising up, recognizing the people pushing things forward, telling their stories and connecting those stories to actionable things.
   \item Joined as second technical hire, reporting to the CTO.
   \item Part of 3 people team for the back-end and front-end.
-  \item Worked on implemeting the first version of Expedition with Elixir, Phoenix Postgresql in the back-end and EmberJS in the front-end.
+  \item Worked on implementing the first version of Expedition with Elixir, Phoenix Postgresql in the back-end and EmberJS in the front-end.
   \item Designed and developed a place scraper and aggregator system using background jobs with GenStage for background processing, place aggregation and persistence into the DB.
   \item Designed and developed the payment system integration with Stripe managing subscriptions and developed it using finite state machines for managing indempotency and state management.
   \item Developed a simple search system for finding places by current location or by name using postgresql fuzzy searching, full text searching and harversine formula for coordinates comparison.
@@ -94,8 +104,6 @@
   \item Built Sys-Admin tools with Ruby, Python and Bash Script.
   \end{achievements}
 
-  \newpage
-
   \employer{ Universidad EAFIT (Medell\'in Colombia) }{2014-2}{Teacher Assistant}
   \begin{achievements}
   \item Integration Project 2
@@ -126,13 +134,20 @@
   \item Interactive Android TV controls based on Accelerometers, Gestures, Buttons, Voice, and Multimedia (the last one was developed by testing the best capabilities of the other ones based on their usability) \emphasys{Java Android}
   \end{achievements}
 
+  \newpage
+
   \header{Open Source and Community Contributions}
   All projects and current work can be found at my GitHub profile: \url{https://github.com/sescobb27}
   \begin{achievements}
-  \item{Organizer of \emphasys{RubyConf Colombia}}
+  \item{Ex-Organizer of \emphasys{RubyConf Colombia}}
   \item{Organizer of \emphasys{RailsGirls Medell\'in}}
-  \item{Ex-organizer of \emphasys{Golang Medell\'in} Meet-Up}
-  \item{Forked and Maintain node's JSON:API serializer which is used in Elizabeth \& Clarke's back-end \url{https://github.com/sescobb27/node-jsonapi-serializer}}
+  \item{Organizer of \emphasys{Ruby Medell\'in} Meet-Up}
+  \item{Speaker at \emphasys{ElixirConf Latin America 2019} \url{https://www.elixirconf.la/conference-simon-escobar}}
+  \item{Speaker at \emphasys{CodeBeam SF 2020} \url{https://codesync.global/speaker/simon-escobar-benitez/}}
+  \item{Author of \url{https://github.com/esl/ex_rabbit_pool}}
+  \item{Author of \url{https://github.com/esl/ex_docker_build}}
+  \item{Author of \url{https://github.com/esl/buildex_poller}}
+  \item{Author of \url{https://github.com/esl/buildex_jobs}}
   \item{Contributed to \url{https://github.com/DavyJonesLocker/postgres_ext}}
   \item{Contributed to \url{https://github.com/ffaker/ffaker}}
   \item{Contributed to \url{https://github.com/phalcon/cphalcon}}
@@ -143,13 +158,15 @@
 
   \header{Skills}
   \begin{achievements}
-  \item {Proficient architecting systems via RFCs}
-  \item {Proficient in Elixir, Ruby, Ruby on Rails, JavaScript, NodeJS, EmberJS, Test Driven Development.}
+  \item {Proficient architecting systems via RFCs.}
+  \item {Proficient in Elixir, Phoenix, Ruby, Ruby on Rails, JavaScript, NodeJS, EmberJS, Test Driven Development.}
+  \item {Proficient in GRPC.}
   \item {Familiar with Golang.}
   \item {Familiar with GNU/Linux.}
   \item {Familiar with GIT.}
-  \item {Familiar with DDD.}
+  \item {Familiar with Domain Driven Design.}
   \item {Familiar with Postgresql.}
+  \item {Familiar with GraphQL.}
   \end{achievements}
   \header{Languages}
   \begin{achievements}
@@ -160,6 +177,7 @@
   \header{Extras}
   \begin{achievements}
   \item{RAFT Consensus algorithm talk \emphasys{Papers We Love Medell\'in} \url{https://github.com/papers-we-love/medellin/pull/4}}
+  \item{Article on ex\_rabbit\_pool open source AMQP connection pool. \url{https://www.erlang-solutions.com/blog/ex_rabbit_pool-open-source-amqp-connection-pool.html}}
   \item{Asynchronous and Parallel behavior with Go \emphasys{Golang Medell\'in Meet-Up} talk \url{https://github.com/sescobb27/async-go}}
   \item{Article on how to build a TCP Chat using ruby. \url{http://www.sitepoint.com/ruby-tcp-chat/}}
   \end{achievements}

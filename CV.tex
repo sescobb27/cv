@@ -42,15 +42,35 @@
 
   \header{Work History - 8 years of exp}
 
-  \employer{ Erlang Solutions (London/Americas Team - Remote)}{2018-2, Current}{Software Engineer}
+  \employer{ Fox - TubiTV (San Francisco/Remote)}{2020-2, Current}{Software Engineer}
+  \begin{achievements}
+  \item \emphasys{Fox - TubiTV} Tubi is an American content platform and ad-supported streaming service owned by Fox Corporation that is trying to compete with industry giants like Netflix and Hulu.
+  \item \emphasys{Bought from Erlang Solutions} I was working at Erlang Solutions as a contractor for TubiTV, but they liked my work so much, that they paid Erlang Solutions to be able to hire me directly as an employee.
+  \item Part of 6 people team, that have growth to 12, at the beginning we were 3 developers, 1 video engineer, 1 product manager and 1 engineer manager, but now we are 6 developers, 4 video engineers, 1 product manager and 1 engineer manager, distributed across United States, Colombia (Me) and China, I report to the engineer manager.
+  \item I have been in charge of designing and implementing the second version of the distributed system running hundred of thousands of distributed background jobs in parallel backed by GRPC, Postgresql and Oban, helping them save hundreds of thousands of dollars per year in storage and processing by optimizing pipelines, paralleling them and an distributing them across many nodes in the cluster.
+  \item I optimized all the DB operations and make them composable via Ecto.Multi, implemented retry strategies for long and expensive jobs, garbage collection of intermediary files and pruning unnecessary garbage from S3, traced and fixed long lived errors in production, improved the test coverage of each service.
+  \item I re-designed and improved the supervision tree architecture and restart strategies of the main parts of the system.
+  \item I co-designed and implemented new service in-charge of our content legal policies synchronization with Fox's legal system.
+  \item I built a parser combinator to convert content policies from plain text to an structured format to our integration with Fox's legal software
+  \item I back filled petabytes of data into multiple storages and make them available through multiple CDNs (Cloudfront/Fastly)
+  \item I re-processed petabytes of files from multiple storage providers to backfill DB with newly needed data in a streaming fashion.
+  \item I migrated the entire cluster from EC2 to Kubernetes with rolling updates and auto-scaling policies.
+  \item We haven't have any major issue or any service disruption.
+  \item I implemented safe migrations best practices so we don't have any downtime on DB migrations.
+  \end{achievements}
+
+  \employer{ Erlang Solutions (London/Americas Team - Remote)}{2018-2, 2020-2}{Software Engineer}
   \begin{achievements}
   \item \emphasys{Erlang Solutions} is a software agency company focused on building fault-tolerant and resilient systems that can scale to billions of users using its Erlang \& Elixir expertise.
   \item Part of 4 people team, 3 developers and one office manager, reporting to the office manager.
   \item \emphasys{Elixir Consultancy} Worked with an educational game company to diagnose server crashes at peak hours, instructed in-house team how to resolve issues while implementing load contention on GenServers, properly use caching with ets tables, organize supervision architecture, reduce the number of queries to the database to a minimum by taking advantage of transactions and pre-loading associations, start using multiple distributed nodes with pg2 and distributing processes across those nodes, install monitoring tools to prevent and diagnose future problems.
   \item \emphasys{Elixir Consultancy} Worked with a major car manufacturer to deliver the next version of their car rental and sharing platform by delivering features and increasing its code coverage by 25\%.
   \item \emphasys{Elixir Consultancy} Worked with a network company delivering multiple services in an micro-service oriented architecture for routing and connecting big gaming companies’ servers throughout the world; among our responsibilities was to increase the test coverage of all of those micro-services, to increase confidence delivering more products and features, parse and import RADB in a streaming fashion into an ets table, and make it query-able, connect multiple services and APIs through GRPC, built a distributed PubSub architecture using Phoenix.PubSub for handling hundreds of thousands of subscribers across more than 30 nodes using proxy processes de decrease the network congestion, add support for their services to support read/write postgresql replicas, and built a GRPC proxy for admins to interact with GoBGP.
-  \item \emphasys{Elixir Consultancy} Currently working with a major video streaming service helping them to scale and implement their video processing platform which is composed of 5 big services, each service having its own cluster, each cluster is composed on multiple nodes, on peak time we have more than 150 nodes in total, in-charge of Media Parsing, Media Transcoding, Packaging, QA and Deliverying final media streams to storage providers in order to stream those results in multiple media formats, qualities, resolutions and video streaming formats. I have been in charge of architecting the second version of the system running thousands of background jobs backed by Postgresql and Oban, helped them save hundreds of thouthousands of dollars per year in storage, traced and fixed long lived errors in production, improved the test coverage of the system, re-designed and improved the supervision trees architecture and restart strategies of the main parts of the system and more.
+  \item \emphasys{Elixir Consultancy} Worked with \emphasys{Fox - TubiTv} a major video streaming service helping them to scale and implement their video processing platform which is composed of multiple big services, each service having its own cluster composed of many nodes (on peak time we have more than 200 nodes in total), in-charge of Media Parsing, Media Transcoding, Packaging, QA and Deliverying final media streams to storage providers in order to stream those results in multiple media formats, qualities, resolutions and video streaming formats. (More Information in Fox - Tubi Section)
+  \item \emphasys{OSS Work} Author of \url{https://github.com/esl/ex_rabbit_pool}, \url{https://github.com/esl/ex_docker_build}, \url{https://github.com/esl/buildex_poller} and \url{https://github.com/esl/buildex_jobs}
   \end{achievements}
+
+  \newpage
 
   \employer{ Expedition (San Francisco/Remote)}{2017-2, 2018-2}{Software Engineer}
   \begin{achievements}
@@ -96,6 +116,8 @@
   \item Built the production environment in AWS EC2.
   \end{achievements}
 
+  \newpage
+
   \employer{ Universidad EAFIT (Medell\'in Colombia) High Performance Computing Research Center APOLO}{2014-1, 2014-2}{Research assistant}
   \begin{achievements}
   \item Research Assistant in High performance computing based on Open Source technologies
@@ -134,38 +156,28 @@
   \item Interactive Android TV controls based on Accelerometers, Gestures, Buttons, Voice, and Multimedia (the last one was developed by testing the best capabilities of the other ones based on their usability) \emphasys{Java Android}
   \end{achievements}
 
-  \newpage
-
   \header{Open Source and Community Contributions}
   All projects and current work can be found at my GitHub profile: \url{https://github.com/sescobb27}
   \begin{achievements}
-  \item{Ex-Organizer of \emphasys{RubyConf Colombia}}
-  \item{Organizer of \emphasys{RailsGirls Medell\'in}}
-  \item{Organizer of \emphasys{Ruby Medell\'in} Meet-Up}
-  \item{Speaker at \emphasys{ElixirConf Latin America 2019} \url{https://www.elixirconf.la/conference-simon-escobar}}
   \item{Speaker at \emphasys{CodeBeam SF 2020} \url{https://codesync.global/speaker/simon-escobar-benitez/}}
-  \item{Author of \url{https://github.com/esl/ex_rabbit_pool}}
-  \item{Author of \url{https://github.com/esl/ex_docker_build}}
-  \item{Author of \url{https://github.com/esl/buildex_poller}}
-  \item{Author of \url{https://github.com/esl/buildex_jobs}}
-  \item{Contributed to \url{https://github.com/DavyJonesLocker/postgres_ext}}
-  \item{Contributed to \url{https://github.com/ffaker/ffaker}}
-  \item{Contributed to \url{https://github.com/phalcon/cphalcon}}
-  \item{Contributed to \url{https://github.com/vt-elixir/ja_serializer}}
-  \item{Contributed to \url{https://github.com/swoosh/swoosh}}
-  \item{more ...}
+  \item{Speaker at \emphasys{ElixirConf Latin America 2019} \url{https://www.elixirconf.la/conference-simon-escobar}}
+  \item{Ex-Organizer of \emphasys{RubyConf Colombia}}
+  \item{Ex-Organizer of \emphasys{RailsGirls Medell\'in}}
+  \item{Organizer of \emphasys{Ruby Medell\'in} Meet-Up}
   \end{achievements}
 
   \header{Skills}
   \begin{achievements}
-  \item {Proficient architecting systems via RFCs.}
-  \item {Proficient in Elixir, Phoenix, Ruby, Ruby on Rails, JavaScript, NodeJS, EmberJS, Test Driven Development.}
+  \item {Proficient designing systems via RFCs.}
+  \item {Proficient in Elixir, Phoenix, Ruby, Ruby on Rails, JavaScript, NodeJS, Test Driven Development.}
   \item {Proficient in GRPC.}
-  \item {Familiar with Golang.}
+  \item {Proficient in Protobuf.}
+  \item {Proficient designing and building APIs.}
+  \item {Familiar with Postgresql.}
   \item {Familiar with GNU/Linux.}
   \item {Familiar with GIT.}
   \item {Familiar with Domain Driven Design.}
-  \item {Familiar with Postgresql.}
+  \item {Familiar with Golang.}
   \item {Familiar with GraphQL.}
   \end{achievements}
   \header{Languages}

@@ -37,123 +37,121 @@
   \smallskip
   \vspace*{-44pt}
   \contact{Sim\'on Escobar Benitez} { $\bullet$ sescobb27@gmail.com $\bullet$ Github: \url{https://github.com/sescobb27} }
+
+  \header{Summary}
+  Distributed Systems Engineer and Platform Engineer with 14+ years of experience designing, building and operating large-scale backend systems. Deep expertise in system design, data migrations, real-time data pipelines, background job orchestration and cost optimization. Comfortable owning the full lifecycle: PRD, design, implementation, testing, deployment, monitoring and on-call support. Passionate about fault-tolerant architectures, performance engineering and building things that don't break at scale.
+
   \header{Education}
   \schoolwithcourses{Universidad EAFIT (Medell\'in, Colombia)}{Software Engineer}
 
-  \header{Work History - 10 years of exp}
+  \header{Work History}
 
-  \employer{ Fox - TubiTV (San Francisco/Remote)}{2020-2, Current}{Software Engineer}
+  \employer{ Appcues (Boston/Remote)}{Mar 2022, Present}{Senior Software Engineer -- Platform \& Distributed Systems}
   \begin{achievements}
-  \item \emphasys{Fox - TubiTV} Tubi is an American content platform and ad-supported streaming service owned by Fox Corporation that is trying to compete with industry giants like Netflix and Hulu.
-  \item \emphasys{Bought from Erlang Solutions} I was working at Erlang Solutions as a contractor for TubiTV, but they liked my work so much, that they paid Erlang Solutions to be able to hire me directly as an employee.
-  \item Part of 6 people team, that have growth to 12, at the beginning we were 3 developers, 1 video engineer, 1 product manager and 1 engineer manager, but now we are 6 developers, 4 video engineers, 1 product manager and 1 engineer manager, distributed across United States, Colombia (Me) and China, I report to the engineer manager.
-  \item I have been in charge of designing and implementing the second version of the distributed system running hundred of thousands of distributed background jobs in parallel backed by GRPC, Postgresql and Oban, helping them save hundreds of thousands of dollars per year in storage and processing by optimizing pipelines, paralleling them and an distributing them across many nodes in the cluster.
-  \item I optimized all the DB operations and make them composable via Ecto.Multi, implemented retry strategies for long and expensive jobs, garbage collection of intermediary files and pruning unnecessary garbage from S3, traced and fixed long lived errors in production, improved the test coverage of each service.
-  \item I re-designed and improved the supervision tree architecture and restart strategies of the main parts of the system.
-  \item I co-designed and implemented new service in-charge of our content legal policies synchronization with Fox's legal system.
-  \item I built a parser combinator to convert content policies from plain text to an structured format to our integration with Fox's legal software
-  \item I back filled petabytes of data into multiple storages and make them available through multiple CDNs (Cloudfront/Fastly)
-  \item I re-processed petabytes of files from multiple storage providers to backfill DB with newly needed data in a streaming fashion.
-  \item I migrated the entire cluster from EC2 to Kubernetes with rolling updates and auto-scaling policies.
-  \item We haven't have any major issue or any service disruption.
-  \item I implemented safe migrations best practices so we don't have any downtime on DB migrations.
+  \item \emphasys{Appcues} is a no-code Customer Engagement Platform (CEP) for web and mobile apps, helping companies build user onboarding, feature adoption and retention experiences -- in-app surveys, guides and checklists -- without requiring extensive engineering resources.
+  \item Part of a 5-6 person team: 1 engineering manager, 1 principal engineer, 1 staff infrastructure engineer and 2-3 platform engineers (including me).
+  \item Core platform engineer across the entire services architecture: data ingestion, soft real-time qualification, customer management, auth, dashboards, flow builder, background jobs, exports, data deletions, GDPR, cross-region migrations, ETL pipelines, push notifications, email, webhooks and JS SDK bundling.
+  \item Part of the on-call rotation, responsible for incident response and support engineering across all services. No major outages on platform/server side during my tenure.
+  \item Platform scale: 400M+ monthly users, tens of millions of daily users, hundreds of millions of ingested events daily, hundreds of millions of soft real-time qualifications, thousands of on-demand content served for both customers and users. Cluster of hundreds of nodes -- optimized the ingestion service from 70 nodes down to at most 40 during rush hours.
+
+  \item \emphasys{600B Events Migration -- Snowflake to ClickHouse:} Designed and implemented a distributed system for migrating all analytics data from Snowflake to ClickHouse. Involved hundreds of dynamic tables, materialized views, partition locks, distributed locks, retries, cleanup jobs, a cluster of worker nodes and a ClickHouse cluster. Achieved 70\%+ cost savings and reduced P90 analytics query time from 1.8s to 0.5s. Managed ClickHouse schema migrations and thousands of jobs per day.
+  \item \emphasys{Large-Scale Data Deletions:} Designed, implemented and deployed a complex deletion workflow across all services, ClickHouse, DynamoDB and Snowflake -- handling millions of deletions for millions of users and customers (account resets, churn, GDPR compliance, test accounts). Built per-table per-database deletion jobs, GDPR scheduling, and a user collector to handle accounts with millions of users sending too many requests per day.
+  \item \emphasys{Soft Real-Time Qualifications:} Implemented soft real-time user qualification system storing and querying qualification data in DynamoDB, pre-computing content rules and applying them to user profiles over WebSockets for personalized targeting (segments, campaigns, flows, surveys). Built data ingestion pipelines from APIs, Segment, Prismatic, Mixpanel and Amplitude integrations, ingesting into SQS for processing, and Kafka-based ETL pipelines into Snowflake and ClickHouse for analytics and dashboards.
+  \item \emphasys{DynamoDB Cost Optimization:} Optimized DynamoDB table schemas reducing storage costs and improving query performance, saving tens of thousands of dollars in DynamoDB bills. Used previous tables as data fallbacks and backfilled new tables from them.
+  \item \emphasys{API Partitioned Event Buffer:} Built an in-memory partitioned event buffer for the API service that ingests data, buffers it and processes only the latest per-event per-user data -- significantly reducing DynamoDB writes and storage costs by filtering and storing only required data instead of the previous store-everything approach.
+
+  \item \emphasys{Cross-Region EU Expansion:} Led the PRD, planning, design, implementation and deployment of Appcues in the EU region. Coordinated a massive cross-region migration workflow across all services: dumping all account data per service and database to S3, then importing into the EU region -- including exporting/importing terabytes of ClickHouse and DynamoDB data. Refactored all services and configuration management to support multi-region.
+  \item \emphasys{Multi-Tenant ClickHouse:} PRD, planned and designed the conversion of Appcues from a single-database-for-all-customers model to multi-tenant ClickHouse.
+  \item \emphasys{Firebase to PostgreSQL Migration:} Migrated Appcues from Firebase to PostgreSQL with zero data loss using dual writes and backfill scripts orchestrated with sagas -- a massive effort.
+  \item \emphasys{HIPAA Compliance:} Implemented HIPAA compliance for customers involving code refactoring, data deletions, new database provisioning and backfills.
+  \item \emphasys{Background Jobs Refactor:} Refactored background jobs from AWS Batch into Oban jobs, saving thousands of dollars, increasing reliability and monitoring. Some jobs were optimized from 7 hours down to 10 minutes. Eliminated painful CloudWatch log hunting.
+  \item \emphasys{Push, Email \& Webhook Services:} Designed and built Pushserv (millions of push notifications), Mailserv (thousands of emails) and the Webhooks service (millions of webhooks). Built a markdown parser for extracting and augmenting content for emails and push notifications.
+  \item \emphasys{Distributed Transactions:} Implemented distributed transactions across services using two-phase commits and sagas for reliable data publishing.
+  \item \emphasys{Rate Limiting \& Backpressure:} Built rate limits, quotas, pricing limits and throttling backpressure across services.
+  \item \emphasys{GraphQL Analytics:} Served ClickHouse analytics, dashboards and exports through GraphQL.
+  \item \emphasys{Supportcues:} Built an internal support tool in Phoenix LiveView with audit trails and changelogs for support engineers.
+  \item \emphasys{Test Optimization:} Optimized API test suite from 3.4 minutes to 40 seconds (5x improvement).
+  \item \emphasys{AI Tooling:} Using Claude Code, ChatGPT and Cursor for development productivity.
   \end{achievements}
 
-  \employer{ Erlang Solutions (London/Americas Team - Remote)}{2018-2, 2020-2}{Software Engineer}
+  \employer{ Fox - TubiTV (San Francisco/Remote)}{Feb 2020, Mar 2022}{Software Engineer -- Distributed Systems}
   \begin{achievements}
-  \item \emphasys{Erlang Solutions} is a software agency company focused on building fault-tolerant and resilient systems that can scale to billions of users using its Erlang \& Elixir expertise.
-  \item Part of 4 people team, 3 developers and one office manager, reporting to the office manager.
-  \item \emphasys{Elixir Consultancy} Worked with an educational game company to diagnose server crashes at peak hours, instructed in-house team how to resolve issues while implementing load contention on GenServers, properly use caching with ets tables, organize supervision architecture, reduce the number of queries to the database to a minimum by taking advantage of transactions and pre-loading associations, start using multiple distributed nodes with pg2 and distributing processes across those nodes, install monitoring tools to prevent and diagnose future problems.
-  \item \emphasys{Elixir Consultancy} Worked with a major car manufacturer to deliver the next version of their car rental and sharing platform by delivering features and increasing its code coverage by 25\%.
-  \item \emphasys{Elixir Consultancy} Worked with a network company delivering multiple services in an micro-service oriented architecture for routing and connecting big gaming companies’ servers throughout the world; among our responsibilities was to increase the test coverage of all of those micro-services, to increase confidence delivering more products and features, parse and import RADB in a streaming fashion into an ets table, and make it query-able, connect multiple services and APIs through GRPC, built a distributed PubSub architecture using Phoenix.PubSub for handling hundreds of thousands of subscribers across more than 30 nodes using proxy processes de decrease the network congestion, add support for their services to support read/write postgresql replicas, and built a GRPC proxy for admins to interact with GoBGP.
-  \item \emphasys{Elixir Consultancy} Worked with \emphasys{Fox - TubiTv} a major video streaming service helping them to scale and implement their video processing platform which is composed of multiple big services, each service having its own cluster composed of many nodes (on peak time we have more than 200 nodes in total), in-charge of Media Parsing, Media Transcoding, Packaging, QA and Deliverying final media streams to storage providers in order to stream those results in multiple media formats, qualities, resolutions and video streaming formats. (More Information in Fox - Tubi Section)
-  \item \emphasys{OSS Work} Author of \url{https://github.com/esl/ex_rabbit_pool}, \url{https://github.com/esl/ex_docker_build}, \url{https://github.com/esl/buildex_poller} and \url{https://github.com/esl/buildex_jobs}
+  \item \emphasys{Fox - TubiTV} Tubi is an American content platform and ad-supported streaming service owned by Fox Corporation competing with Netflix and Hulu.
+  \item \emphasys{Bought from Erlang Solutions} I was contracting for TubiTV through Erlang Solutions, but they liked my work so much they paid Erlang Solutions to hire me directly.
+  \item Part of a team that grew from 6 to 12 people, distributed across the US, Colombia and China.
+  \item Designed and implemented the second version of their distributed system running hundreds of thousands of parallel background jobs backed by GRPC, PostgreSQL and Oban -- saving hundreds of thousands of dollars per year in storage and processing.
+  \item Optimized all DB operations and made them composable via Ecto.Multi, implemented retry strategies, garbage collection of intermediary files, S3 pruning, traced and fixed long-lived production errors, improved test coverage.
+  \item Re-designed the supervision tree architecture and restart strategies of the main system components.
+  \item Co-designed and implemented a service for content legal policies synchronization with Fox's legal system, including a parser combinator to convert policies from plain text to structured format.
+  \item Backfilled petabytes of data into multiple storages and CDNs (CloudFront/Fastly). Re-processed petabytes of files from multiple storage providers in a streaming fashion.
+  \item Migrated the entire cluster from EC2 to Kubernetes with rolling updates and auto-scaling.
+  \item Implemented safe migration best practices for zero-downtime DB migrations. No major incidents or service disruptions during my tenure.
   \end{achievements}
 
-  \newpage
-
-  \employer{ Expedition (San Francisco/Remote)}{2017-2, 2018-2}{Software Engineer}
+  \employer{ Erlang Solutions (London/Americas Team - Remote)}{Feb 2018, Feb 2020}{Software Engineer -- Elixir Consultant}
   \begin{achievements}
-  \item \emphasys{Expedition} is a service for connecting pockets of people and digging down deep into emerging markets in cities that are rising up, recognizing the people pushing things forward, telling their stories and connecting those stories to actionable things.
-  \item Joined as second technical hire, reporting to the CTO.
-  \item Part of 3 people team for the back-end and front-end.
-  \item Worked on implementing the first version of Expedition with Elixir, Phoenix Postgresql in the back-end and EmberJS in the front-end.
-  \item Designed and developed a place scraper and aggregator system using background jobs with GenStage for background processing, place aggregation and persistence into the DB.
-  \item Designed and developed the payment system integration with Stripe managing subscriptions and developed it using finite state machines for managing indempotency and state management.
-  \item Developed a simple search system for finding places by current location or by name using postgresql fuzzy searching, full text searching and harversine formula for coordinates comparison.
+  \item \emphasys{Erlang Solutions} is a software agency focused on building fault-tolerant and resilient systems that scale to billions of users using Erlang \& Elixir.
+  \item Part of a 4 person team, reporting to the office manager.
+  \item \emphasys{Educational Game Company:} Diagnosed server crashes at peak hours, implemented load contention on GenServers, ETS caching, supervision architecture improvements, distributed nodes with pg2, and monitoring tooling.
+  \item \emphasys{Major Car Manufacturer:} Delivered the next version of their car rental and sharing platform, increasing code coverage by 25\%.
+  \item \emphasys{Network/Gaming Company:} Built microservices for routing gaming servers worldwide -- distributed PubSub with Phoenix.PubSub across 30+ nodes, GRPC integrations, RADB streaming parser, read/write PostgreSQL replicas, and a GRPC proxy for GoBGP.
+  \item \emphasys{Fox - TubiTV:} Helped scale their video processing platform composed of multiple services, each with its own cluster (200+ nodes at peak). Responsible for media parsing, transcoding, packaging, QA and delivering final streams to storage providers in multiple formats and resolutions.
+  \item \emphasys{OSS Work:} Author of ex\_rabbit\_pool, ex\_docker\_build, buildex\_poller and buildex\_jobs.
   \end{achievements}
 
-  \employer{ Elizabeth \& Clarke (New York/Remote)}{2015-2, 2017-2}{Lead Software Engineer}
+  \employer{ Expedition (San Francisco/Remote)}{2017, 2018}{Software Engineer}
   \begin{achievements}
-  \item \emphasys{Elizabeth \& Clarke} is an on-line subscription based fashion store
-  \item Joined as first technical hire, reporting to the CTO and Founder.
-  \item Worked on implementing the second version of Elizabeth \& Clarke with NodeJS and MongoDB in the back-end and EmberJS in the front-end with stripe as out payment gateway.
-  \item Defined initial server and web architecture which was continuously iterated on without the need for re-architectures or major re-writes.
-  \item Responsible for web and server platform architecture and infrastructure.
-  \item Mentor and train the second technical hire in platform architecture, infrastructure and back-end development.
-  \item Designed and developed the behavioral state machine that controls all our operations including order state management, subscriptions, billing management and customer management.
-  \item Designed and developed (Dollarico) an internal automation tool to automate the process of delivering new seasons through time, so we can run a year in 1 day including product releases, payments, reports and more.
-  \item Reported to the CTO and Founder.
-  \end{achievements}
-
-  \employer{Make it Real (Medell\'in)}{2017-1, 2017-1}{Teacher}
-  \begin{achievements}
-  \item \emphasys{Make it Real} is a Full-Stack bootcamp
-  \item Taught about Ruby, OOP with Ruby, Sinatra, Rails, Databases, SQL and JavaScript
-  \end{achievements}
-
-  \employer{ Talos Digital (Medell\'in Colombia)}{2014-2, 2015-1}{Software Engineer}
-  \begin{achievements}
-  \item \emphasys{Convenience Select}: The project was about Team management and Loan service for kid's sport teams. The teams were able to outsource all the payment and e-commerce services through the application.
-  \item Full-stack Developer using MEAN framework  (MongoDB, ExpressJS, AngularJS and NodeJS).
-  \item Developed all client side logic and interactions using AngularJS.
-  \item Developed a Loan service and Payment Gateway Adapter.
-  \item Developed a cron based services for charging users.
-  \item \emphasys{Scanther}: The project was about building mobile web sites and native applications dynamically and easily for non-dev customers.
-  \item Full-stack Developer using Firebase, AngularJS and NodeJs
-  \item Developed all business logic in AngularJS using Firebase as a web service which is a realtime nosql database.
-  \item Developed a NodeJS proxy for all our integration with our Payment Gateway including webhooks. Also this proxy serves all our integration with Urban Airship for all our notifications to mobile devices.
-  \item Built the production environment in AWS EC2.
+  \item \emphasys{Expedition} is a service for connecting people and emerging markets in rising cities.
+  \item Second technical hire, reporting to the CTO. 3 person team for back-end and front-end.
+  \item Built the first version with Elixir, Phoenix, PostgreSQL and EmberJS.
+  \item Designed a place scraper and aggregator using GenStage for background processing.
+  \item Built the payment system with Stripe using finite state machines for idempotency and state management.
+  \item Built a search system using PostgreSQL fuzzy search, full text search and haversine formula.
   \end{achievements}
 
   \newpage
 
-  \employer{ Universidad EAFIT (Medell\'in Colombia) High Performance Computing Research Center APOLO}{2014-1, 2014-2}{Research assistant}
+  \employer{ Elizabeth \& Clarke (New York/Remote)}{2015, 2017}{Lead Software Engineer}
   \begin{achievements}
-  \item Research Assistant in High performance computing based on Open Source technologies
-  \item Operative System: we work on "Rocks Cluster" based on CentOS 6.1
-  \item As a System Administrator I was in charge of job submission queues using torque and maui as a scheduler, compilation and installation of large and modular software.
-  \item Built Sys-Admin tools with Ruby, Python and Bash Script.
+  \item \emphasys{Elizabeth \& Clarke} is an online subscription-based fashion store.
+  \item First technical hire, reporting to the CTO and Founder.
+  \item Built the second version with NodeJS, MongoDB, EmberJS and Stripe.
+  \item Defined the initial server and web architecture which was continuously iterated on without major re-writes.
+  \item Responsible for platform architecture and infrastructure. Mentored the second technical hire.
+  \item Designed the behavioral state machine controlling order management, subscriptions, billing and customer management.
+  \item Built Dollarico, an internal automation tool to simulate and run a full year of operations in a day (product releases, payments, reports).
   \end{achievements}
 
-  \employer{ Universidad EAFIT (Medell\'in Colombia) }{2014-2}{Teacher Assistant}
+  \employer{Make it Real (Medell\'in)}{2017}{Teacher}
   \begin{achievements}
-  \item Integration Project 2
-  \item Assist students on Web Application Development, Continuous Integration, Continuous Delivery and TDD.
+  \item Full-Stack bootcamp. Taught Ruby, OOP, Sinatra, Rails, Databases, SQL and JavaScript.
   \end{achievements}
 
-  \employer{ Universidad EAFIT (Medell\'in Colombia) }{2013-2, 2014-2}{Teacher Assistant}
+  \employer{ Talos Digital (Medell\'in, Colombia)}{2014, 2015}{Software Engineer}
   \begin{achievements}
-  \item Integration Project 1
-  \item Assist students on Android Application Development, Web Services and 3rd party integrations.
+  \item \emphasys{Convenience Select:} Team management and loan service for kid's sport teams. Full-stack MEAN (MongoDB, ExpressJS, AngularJS, NodeJS). Built loan service, payment gateway adapter and cron-based charging.
+  \item \emphasys{Scanther:} Dynamic mobile website and native app builder. Full-stack with Firebase, AngularJS and NodeJS. Built payment gateway proxy, Urban Airship integration and AWS EC2 production environment.
   \end{achievements}
 
-  \employer{ SmartOut (Half Time - Remote)}{2013-1, 2014-1}{Software Engineer}
+  \employer{ Universidad EAFIT -- HPC Research Center APOLO (Medell\'in, Colombia)}{2014}{Research Assistant}
   \begin{achievements}
-  \item Developed a \programming{Ruby on Rails - Postgresql - EmberJS} application for local Start-Up
-  \item It was a coupon/discount recommender system who deliver coupons and discounts directly to user through Google Cloud Messaging and Apple Push Notification Service improving the Customer - User relationship.
+  \item High performance computing on Rocks Cluster (CentOS). Managed job submission queues with Torque/Maui. Built sys-admin tools with Ruby, Python and Bash.
   \end{achievements}
 
-  \employer{ Freelance (Remote)  Liliane Fonds Ong}{2013-2, 2014-1}{Software Engineer}
+  \employer{ Universidad EAFIT (Medell\'in, Colombia)}{2012, 2014}{Teacher Assistant \& Research Assistant}
   \begin{achievements}
-  \item Migrate a \programming{Ruby on Rails 2} application to \programming{Ruby on Rails 3}
-  \item Developed new features and improve performance.
+  \item Assisted students on web development, CI/CD, TDD, Android development and web services.
+  \item Research assistant in IPTV: built interactive Android TV controls using accelerometers, gestures, voice and multimedia.
   \end{achievements}
 
-  \employer{ Universidad EAFIT (Medell\'in Colombia) / ARTICA (Applied ICT Regional Alliance)} {2012-1, 2012-2} {Research assistant in IPTV}
+  \employer{ SmartOut (Remote, Half Time)}{2013, 2014}{Software Engineer}
   \begin{achievements}
-  \item Java Android Software Developer
-  \item Interactive Android TV controls based on Accelerometers, Gestures, Buttons, Voice, and Multimedia (the last one was developed by testing the best capabilities of the other ones based on their usability) \emphasys{Java Android}
+  \item Built a coupon/discount recommender system with Ruby on Rails, PostgreSQL and EmberJS using GCM and APNS for push delivery.
+  \end{achievements}
+
+  \employer{ Freelance -- Liliane Fonds ONG (Remote)}{2013, 2014}{Software Engineer}
+  \begin{achievements}
+  \item Migrated a Ruby on Rails 2 application to Rails 3. Developed new features and improved performance.
   \end{achievements}
 
   \header{Open Source and Community Contributions}
@@ -168,18 +166,20 @@
 
   \header{Skills}
   \begin{achievements}
-  \item {Proficient designing systems via RFCs.}
-  \item {Proficient in Elixir, Phoenix, Ruby, Ruby on Rails, JavaScript, NodeJS, Test Driven Development.}
-  \item {Proficient in GRPC.}
-  \item {Proficient in Protobuf.}
-  \item {Proficient designing and building APIs.}
-  \item {Familiar with Postgresql.}
-  \item {Familiar with GNU/Linux.}
-  \item {Familiar with GIT.}
-  \item {Familiar with Domain Driven Design.}
-  \item {Familiar with Golang.}
-  \item {Familiar with GraphQL.}
+  \item {Proficient in distributed systems design, system design and architecture via RFCs and PRDs.}
+  \item {Proficient in Elixir, OTP, Phoenix, Phoenix LiveView.}
+  \item {Proficient in ClickHouse, PostgreSQL, DynamoDB, Snowflake, Redis.}
+  \item {Proficient in Kafka, SQS, event-driven architectures and data pipelines.}
+  \item {Proficient in REST APIs, GraphQL, GRPC, Protobuf, WebSockets.}
+  \item {Proficient in background job orchestration (Oban)}
+  \item {Proficient in Ruby, Ruby on Rails, JavaScript, NodeJS, Test Driven Development.}
+  \item {Proficient with AWS (EC2, S3, SQS, DynamoDB, CodeDeploy), Docker.}
+  \item {Proficient with AI-assisted development (Claude Code, Cursor, ChatGPT).}
+  \item {Familiar with Golang, Python.}
+  \item {Familiar with Datadog, Sentry, CircleCI, GitHub Actions.}
+  \item {Familiar with GNU/Linux, GIT, Domain Driven Design.}
   \end{achievements}
+
   \header{Languages}
   \begin{achievements}
   \item{Spanish - Native Language}
@@ -190,16 +190,5 @@
   \begin{achievements}
   \item{CodeBeam SF talk \emphasys{Docker Images a la carte with Elixir and RabbitMQ} \url{https://codesync.global/media/docker-images-a-la-carte-with-elixir-and-rabbitmq-cbf20/}}
   \item{RAFT Consensus algorithm talk \emphasys{Papers We Love Medell\'in} \url{https://github.com/papers-we-love/medellin/pull/4}}
-  \item{Article on ex\_rabbit\_pool open source AMQP connection pool. \url{https://www.erlang-solutions.com/blog/ex_rabbit_pool-open-source-amqp-connection-pool.html}}
-  \item{Asynchronous and Parallel behavior with Go \emphasys{Golang Medell\'in Meet-Up} talk \url{https://github.com/sescobb27/async-go}}
-  \item{Article on how to build a TCP Chat using ruby. \url{http://www.sitepoint.com/ruby-tcp-chat/}}
-  \end{achievements}
-
-  \header{Personal references}
-  \begin{achievements}
-  \item{Juan Pablo Buritica \emphasys{CTO at Elizabeth \& Clarke} and \emphasys{VP of Engineering at Splice} Twitter @buritica}
-  \end{achievements}
-  \begin{achievements}
-  \item{Sebastian Arcila Valenzuela \emphasys{Architecture Director at Barista Ventures} Twitter @sarcilav}
   \end{achievements}
   \end{document}

@@ -1,0 +1,119 @@
+\documentclass[a4paper]{article}
+  \usepackage{fullpage}
+  \usepackage[english]{babel}
+  \usepackage[utf8x]{inputenc}
+  \usepackage{amsmath} \usepackage{amssymb} \usepackage{url} \textheight=10in
+  \pagestyle{empty}
+  \raggedright
+  \title{Resume}
+  \author{Sim\'on Escobar Benitez}
+  \def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+  % DEFINITIONS FOR RESUME
+  \newcommand{\area}[2]{\vspace*{-9pt} \begin{verse}\textbf{#1} #2 \end{verse}
+  }
+  \newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+  \newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt}
+  \textsc{#1}} \vspace*{-6pt} \lineunder}
+  \newcommand{\employer}[3]{{
+  \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\ }}
+  \newcommand{\contact}[2]{
+  \vspace*{-8pt}
+  \begin{center}
+  {\LARGE \scshape {#1}} \lineunder #2
+  \end{center}
+  \vspace*{-8pt} }
+  \newenvironment{achievements}{\begin{list}{$\bullet$}{\topsep 0pt \itemsep
+  -2pt}}{\vspace*{4pt}\end{list}}
+  \newcommand{\schoolwithcourses}[2]{
+  \textbf{#1} #2
+  \vspace*{5pt} }
+  \newcommand{\school}[4]{ \textbf{#1} #2 $\bullet$ #3\\ #4
+  \\ }
+  \newcommand{\programming}[1]{{\textbf{#1}}}
+  \newcommand{\emphasys}[1]{\textbf{\emph{#1}}}
+  % END RESUME DEFINITIONS
+  \begin{document}
+  \small
+  \smallskip
+  \vspace*{-44pt}
+  \contact{Sim\'on Escobar Benitez} { $\bullet$ sescobb27@gmail.com $\bullet$ Github: \url{https://github.com/sescobb27} }
+
+  \header{Summary}
+  Distributed Systems Engineer and Platform Engineer with 14+ years of experience designing, building and operating large-scale backend systems. Deep expertise in system design, data migrations, real-time data pipelines, background job orchestration and cost optimization. Comfortable owning the full lifecycle: PRD, design, implementation, testing, deployment, monitoring and on-call support. Passionate about fault-tolerant architectures, performance engineering and building things that don't break at scale.
+
+  \header{Skills}
+  \begin{achievements}
+  \item {Distributed systems design, system design and architecture via RFCs and PRDs.}
+  \item {Elixir, OTP, Phoenix, Phoenix LiveView, Ruby, Ruby on Rails, JavaScript, NodeJS.}
+  \item {ClickHouse, PostgreSQL, DynamoDB, Snowflake, Redis, Kafka, SQS.}
+  \item {REST APIs, GraphQL, GRPC, Protobuf, WebSockets.}
+  \item {AWS (EC2, S3, SQS, DynamoDB, CodeDeploy), Kubernetes, Docker.}
+  \item {Background job orchestration (Oban), distributed locks, sagas, two-phase commits.}
+  \item {Event-driven architectures, data pipelines, ETL, real-time streaming.}
+  \item {Datadog, Sentry, CircleCI, GitHub Actions, AI-assisted development (Claude Code, Cursor).}
+  \item {Golang, Python, GNU/Linux, GIT, Domain Driven Design, TDD.}
+  \end{achievements}
+
+  \header{Work History}
+
+  \employer{ Appcues (Boston/Remote)}{Mar 2022, Present}{Senior Software Engineer -- Platform \& Distributed Systems}
+  \begin{achievements}
+  \item No-code Customer Engagement Platform (CEP) for web and mobile apps. 400M+ monthly users, tens of millions daily, hundreds of millions of ingested events and soft real-time qualifications daily.
+  \item Part of a 5-6 person team. Core platform engineer across the entire services architecture: data ingestion, real-time qualification, customer management, background jobs, exports, GDPR, cross-region migrations, ETL, push notifications, email, webhooks and JS SDK.
+  \item Designed and built a distributed system migrating 600B events from Snowflake to ClickHouse -- 70\%+ cost savings, P90 query time from 1.8s to 0.5s. Hundreds of dynamic tables, distributed locks, thousands of daily jobs.
+  \item Led cross-region EU expansion: PRD through deployment, migrating terabytes of ClickHouse and DynamoDB data across regions. Refactored all services for multi-region support.
+  \item Built large-scale deletion workflows across all services and databases -- millions of deletions for GDPR compliance, account resets and churn.
+  \item Implemented soft real-time qualification system over WebSockets with DynamoDB, data ingestion from Segment/Mixpanel/Amplitude, Kafka ETL into ClickHouse.
+  \item Optimized DynamoDB schemas saving tens of thousands of dollars. Built in-memory partitioned event buffer reducing writes and storage costs.
+  \item Migrated Firebase to PostgreSQL with zero data loss (dual writes + sagas). Implemented HIPAA compliance.
+  \item Refactored AWS Batch jobs into Oban -- some optimized from 7 hours to 10 minutes. Built push, email and webhook services handling millions of messages.
+  \item Optimized API test suite from 3.4min to 40s (5x). Built internal support tool in Phoenix LiveView. No major platform outages during tenure.
+  \end{achievements}
+
+  \employer{ Fox - TubiTV (San Francisco/Remote)}{Feb 2020, Mar 2022}{Software Engineer -- Distributed Systems}
+  \begin{achievements}
+  \item Ad-supported streaming service owned by Fox Corporation. Team grew from 6 to 12, distributed across US, Colombia and China.
+  \item Designed distributed system running hundreds of thousands of parallel background jobs (GRPC, PostgreSQL, Oban) -- saving hundreds of thousands of dollars per year.
+  \item Backfilled and re-processed petabytes of data across multiple storages and CDNs (CloudFront/Fastly) in streaming fashion.
+  \item Migrated entire cluster from EC2 to Kubernetes. Zero-downtime DB migrations. No service disruptions.
+  \item Hired directly from Erlang Solutions -- they paid to bring me on as a full-time employee.
+  \end{achievements}
+
+  \employer{ Erlang Solutions (London/Americas Team - Remote)}{Feb 2018, Feb 2020}{Software Engineer -- Elixir Consultant}
+  \begin{achievements}
+  \item Consulted for multiple companies: educational gaming (crash diagnosis, distributed nodes), major car manufacturer (car rental platform), network/gaming company (distributed PubSub across 30+ nodes, GRPC, microservices).
+  \item Scaled Fox/TubiTV's video processing platform (200+ nodes at peak) -- media parsing, transcoding, packaging and delivery.
+  \item OSS author: ex\_rabbit\_pool, ex\_docker\_build, buildex\_poller, buildex\_jobs.
+  \end{achievements}
+
+  \employer{ Expedition (San Francisco/Remote)}{2017, 2018}{Software Engineer}
+  \begin{achievements}
+  \item Second technical hire. Built first version with Elixir, Phoenix, PostgreSQL, EmberJS. Designed place scraper with GenStage, payment system with Stripe using finite state machines.
+  \end{achievements}
+
+  \employer{ Elizabeth \& Clarke (New York/Remote)}{2015, 2017}{Lead Software Engineer}
+  \begin{achievements}
+  \item First technical hire. Built platform with NodeJS, MongoDB, EmberJS, Stripe. Designed behavioral state machine for order/subscription management. Built internal automation tool (Dollarico).
+  \end{achievements}
+
+  \employer{ Earlier Roles}{2012, 2015}{Software Engineer, Teacher, Research Assistant}
+  \begin{achievements}
+  \item \emphasys{Make it Real} (2017) -- Full-stack bootcamp teacher (Ruby, Rails, JS).
+  \item \emphasys{Talos Digital} (2014-2015) -- Full-stack MEAN and Firebase developer.
+  \item \emphasys{Universidad EAFIT} (2012-2014) -- HPC research assistant, teacher assistant, IPTV research.
+  \item \emphasys{SmartOut} (2013-2014) -- Push notification recommender system (Rails, EmberJS).
+  \end{achievements}
+
+  \header{Education}
+  \schoolwithcourses{Universidad EAFIT (Medell\'in, Colombia)}{Software Engineer}
+
+  \header{Community}
+  \begin{achievements}
+  \item{Speaker at CodeBeam SF 2020 and ElixirConf Latin America 2019. Ex-organizer of RubyConf Colombia and RailsGirls Medell\'in.}
+  \end{achievements}
+
+  \header{Languages}
+  \begin{achievements}
+  \item{Spanish (Native) $\bullet$ English (Proficient)}
+  \end{achievements}
+  \end{document}
